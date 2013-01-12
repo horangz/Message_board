@@ -1,100 +1,44 @@
-#wrapper{
-	width: 100%;
+header{
 	margin: 0 auto;
-	padding: auto;
+	padding: 0;
+	width: 80%;
+	height: 130px;
+	background-color: black;
 }
 
-#header, #footer{
-	text-align: center;
-	color: #ffffff;
-	height: 100px;
-	background-color: #000000;
+nav{
+	margin: 20px auto;
+	height: 30px;
+	background-color: #cccccc;
 }
 
-#content{
-	background-color: #bbbbbb;
-	margin: 30px auto 10px;
-        width: 50%;
+footer{
+	margin: auto;
+	width: 80%;
+	height: 130px;
+	background-color: #cccccc;
 }
 
-#menu{
-    height: 30px;
-    width: 100%;
-    background-color: #cccccc;
-    margin-top: 51px;
-    padding-top: 5px;
+#cat{
+	word-wrap: break-word;
+	float: right;
+	margin: 20px 10% 10px 10px;
+	width: 20%;
+	background-color: #cccccc;
 }
 
-#menu span{
-    margin: 50px;
+#con{
+	word-wrap: break-word;
+	width: 50%;
+	margin: 10px 10px 10px 15%;
+	background-color: #cccccc;
 }
 
-
-#menu #center{
-    margin: 100px
-}
-
-#login{
-    text-align: right;
-    height: 35px;
+.image{
+	height: 80px;
+  width: 100px;
 }
 
 .clear{
 	clear: both;
-}
-
-textarea{
-    resize: none;
-    background-color: #cccccc;
-}
-
-#getContent{
-    word-wrap: break-word;
-    height: 70px;
-    overflow: hidden;
-}
-
-#title{
-    background-color: #ccccd3;
-    margin-bottom: 0;
-}
-
-#title a:hover{
-    color: #7f7f7f;
-}
-
-#getnews{
-    margin-top: 0;
-    padding-top: 0;
-}
-
-#headNew img{
-    text-align: left;
-    margin: 0;
-    height: 75px;
-    width: 100px;
-    float: left;
-}
-
-#addN p{
-    margin: 0;
-}
-
-.image{
-    height: 60%;
-    width: 80%;
-    float: left;
-}
-
-a{
-    
-    color: black;
-}
-
-a:hover{
-    text-decoration: none;
-}
-
-input{
-    outline: none;
 }

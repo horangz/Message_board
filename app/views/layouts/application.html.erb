@@ -2,33 +2,17 @@
 <html>
 	<head>
 		<title><%= title %></title>
-			<%= stylesheet_link_tag 'style', media: 'screen' %>
+		<%= render 'layouts/stylesheets' %>
 	</head>
 	<body>
-		<div id = "wrapper">
-			<div id = "header">
-                            <div id = "headNew">
-                               
-                            </div>    
-                            
-                             <div id ="login">
-                            </div>
-                            
-                            <div id = "menu">
-                            </div>
-                           
-                        </div>
-                    <div></div>
-                    <div class = "clear"></div>
-                    <div id = "content">
-											<%= yield %>
-										</div>
-			<div class = "clear"></div>
-			<div id = "footer">footer
-        <form>
-          <input type = "color">
-        </form>
-      </div>
-		</div>
+		<%= render 'layouts/header' %>
+		<%= render 'layouts/categories' %>
+		<section id = 'con'>
+			<%= yield %>
+		</section>
+		<div class = 'clear'></div>
+		<footer>
+		
+		</footer>
 	</body>
 </html>
