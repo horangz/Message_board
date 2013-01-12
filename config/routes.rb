@@ -1,5 +1,6 @@
 MessageBoard::Application.routes.draw do
-  get "/signup", to: 'pages#signup'	
+
+  match "/signup", to: 'users#new'	
 	
 	
 	root :to => 'pages#home'

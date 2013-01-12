@@ -1,12 +1,12 @@
 require 'spec_helper'
 
-describe PagesController do
+describe UsersController do
 
-  describe "GET 'home'" do
-	
+  describe "GET 'new'" do
     it "should be successful" do
-      get 'home'
+      get 'new'
       response.should be_success
     end
   end
+
 end
