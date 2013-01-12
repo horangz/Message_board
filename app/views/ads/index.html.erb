@@ -1,3 +1,8 @@
-<h1>Ads#index</h1>
-<p>Find me in app/views/ads/index.html.erb</p>
-<%= %>
+<section id = "cat">a
+</section>
+<section id = "con">
+<h2>Ads</h2>
+<% @ads.each do |ad|%>
+<p><%=  link_to "#{ad[:title]} - #{ad[:content]}", ad_path(ad)%></p>
+<% end %>
+</section>

@@ -1,5 +1,7 @@
 MessageBoard::Application.routes.draw do
-	resources :ads, :users
+	get "categories/new"
+
+	resources :ads, :users, :categories
 
   match "/signup", to: 'users#new'	
 	
