@@ -19,12 +19,14 @@ group :assets do
   # gem 'therubyracer'
 
   gem 'uglifier', '>= 1.0.3'
+	gem 'spork', '0.9.0.rc8'
 end
 
 
 group :test do
   gem 'rspec-rails', '2.6.1'
   gem 'webrat', '0.7.1'
+	gem 'spork', '0.9.0.rc8'
 end
 gem 'jquery-rails'
 
