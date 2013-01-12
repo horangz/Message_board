@@ -1,0 +1,13 @@
+<section id = 'con'>
+	<h2>Add an ad</h2>
+	<%= form_for @ad do |f| %>
+	
+		<p><%= f.label :title%></p>
+		<p><%= f.text_field :title %></p>
+		
+		<p><%= f.label :content%></p>
+		<p><%= f.text_area :content %></p>
+		
+		<%= f.submit %>
+	<% end %>
+</section>

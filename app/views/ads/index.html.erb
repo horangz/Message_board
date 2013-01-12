@@ -3,6 +3,14 @@
 <section id = "con">
 <h2>Ads</h2>
 <% @ads.each do |ad|%>
-<p><%=  link_to "#{ad[:title]} - #{ad[:content]}", ad_path(ad)%></p>
+		<p><%= "#{ad[:title]} - #{ad[:content]} - #{ad[:updated_at]}" %>
+			 <%= link_to 'delete', ad_path(ad), :method => :delete, confirm: 'Are u sure?'%></p>
+	<% end %>
+<% Ad.pgcount.times do |p|%>
+	
+  <%= link_to p+1, "/ads#{p+1}" %>
+	
 <% end %>
+
+
 </section>
