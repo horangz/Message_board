@@ -2,8 +2,11 @@ MessageBoard::Application.routes.draw do
 	get "categories/new"
 
 	resources :ads, :users, :categories
+	recources :sessions, olny: [:new, :create, :destroy]
 
-  match "/signup", to: 'users#new'	
+  match "/signup", to: 'sessions#new'	
+	match '/signin',  :to => 'sessions#new'
+  match '/signout', :to => 'sessions#destroy'
 	
 	
 	root :to => 'ads#index'
