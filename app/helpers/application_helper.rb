@@ -8,4 +8,8 @@ module ApplicationHelper
 			"#{base_title} - #{@title}"
 		end
 	end
+	
+	def logo
+		image_tag('news.png', alt: 'News', class: 'image')
+	end
 end

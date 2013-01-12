@@ -1,9 +1,10 @@
 MessageBoard::Application.routes.draw do
+	resources :ads, :users
 
   match "/signup", to: 'users#new'	
 	
 	
-	root :to => 'pages#home'
+	root :to => 'ads#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

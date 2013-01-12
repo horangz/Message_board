@@ -17,7 +17,7 @@ group :assets do
 	gem 'webrat', '0.7.1'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
-
+	gem 'annotate', '2.4.0'
   gem 'uglifier', '>= 1.0.3'
 	gem 'spork', '0.9.0.rc8'
 end
