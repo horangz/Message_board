@@ -1,0 +1,17 @@
+<section id = "con">
+<h1>Edit ad</h1>
+
+<%= form_for(@ad) do |f| %>
+  
+    <p><%= f.label :title %></p>
+    <p><%= f.text_field :title %></p>
+
+    <p><%= f.label :content %></p>
+    <p><%= f.text_area :content %></p>
+
+
+    <p><%= f.select(:category_id, options_for_select(@cats.collect {|p| [ p.name, p.id ] },   "Select Category")) %></p>
+		
+		<%= f.submit %>
+<% end %>
+</section>

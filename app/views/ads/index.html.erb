@@ -7,7 +7,8 @@
 <h2>Ads</h2>
 <% @ads.each do |ad|%>
 		<p><%= "#{ad[:title]} - #{ad[:content]} - #{ad[:updated_at]}" %>
-			 <%= link_to 'delete', ad_path(ad), :method => :delete, confirm: 'Are u sure?'%></p>
+			 <%= link_to 'edit', edit_ad_path(ad) %>
+			 <%= link_to 'delete', { :action => :destroy, :id => ad.id }, method: :delete, confirm: 'Are u sure?'%></p>
 	<% end %>
 <% Ad.pgcount.times do |p|%>
 	
