@@ -3,5 +3,9 @@ class CategoriesController < ApplicationController
   end
 	
 	def show
-  end
+		@cats = Category.all
+		@cat = Category.find(params[:id])
+		@ads_by_cat = @cat.ads.all
+		@title = @cat.name
+	end
 end

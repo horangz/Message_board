@@ -1,3 +1,10 @@
-<h2><% @ads.each do |ad|%>
-<p><%=  ad.name%></p>
+<section id = "cat">
+<% @cats.each do |cat| %>
+	<p><%= link_to "#{cat.name}", category_path(cat) %></p>
+<% end %>
+</section>
+<section id = "con">
+<h2><% @ads_by_cat.each do |ad|%>
+<p><%=  "#{ad.title} - #{ad.content}" %></p>
 <% end %></h2>
+</section>
