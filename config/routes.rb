@@ -1,15 +1,16 @@
 MessageBoard::Application.routes.draw do
-	#get "categories/new"
 	
-	resources :users, :categories
+	resources :users, :categories, :admins
 	resources :sessions, olny: [:new, :create, :destroy]
 	resources :ads, :except => [:index, :show]
 
-	match "ad/:id", to: 'ads#destroy'
+	match "/admin", to: 'ads#admin'
+	match "ads/:id", to: 'ads#destroy'
   match "/signup", to: 'users#new'	
 	match '/signin',  :to => 'sessions#new'
   match '/signout', :to => 'sessions#destroy'
 	match 'ads:page', to: 'ads#index'
+	match 'category:id', to: 'ads#get_category'
 	
 	
 	root :to => 'ads#index'

@@ -21,6 +21,7 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 	gem 'spork', '0.9.0.rc8'
 	gem 'factory_girl_rails', '1.0'
+	gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
 end
 
 

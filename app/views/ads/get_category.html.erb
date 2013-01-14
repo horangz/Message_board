@@ -1,6 +1,6 @@
 <section id = "cat">
 <% @cats.each do |cat| %>
-	<p><%= link_to "#{cat.name}", category_path(cat) %></p>
+	<p><%= link_to "#{cat.name}", "category#{cat.id}" %></p>
 <% end %>
 </section>
 <section id = "con">

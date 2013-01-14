@@ -5,6 +5,9 @@
 				<% if signed_in? %>
 					<%= link_to 'Add ad', new_ad_path %>
 					<%= link_to "Sign out", signout_path, :method => :delete %>
+					<% if  root%>
+						<%= link_to 'admin', '/admin' %>
+					<% end %>
 				<% else %>
 					<%= link_to "Sign in", signin_path %>
 					<%= link_to 'Sign up', signup_path %>

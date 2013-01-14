@@ -1,6 +1,8 @@
 class Ad < ActiveRecord::Base
 	belongs_to :categories
 	
+	attr_accessible :title, :content, :category_id
+	
 	validates :category_id, presence: true
 	
 	PerPage = 3
@@ -12,5 +14,4 @@ class Ad < ActiveRecord::Base
   def self.pgcount
     count % PerPage == 0 ? count / PerPage : count / PerPage + 1
   end
-	
 end
