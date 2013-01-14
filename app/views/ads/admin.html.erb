@@ -1,20 +1,4 @@
-<section id = "cat">
-<% @cats.each do |cat| %>
-	<p><%= link_to "#{cat.name}", "/category#{cat.id}" %></p>
-<% end %>
-</section>
-<section id = "con">
+<%= render 'layouts/ads_by_category' %>
 
-	<h2>Ads</h2>
-	
-	<% @ads_per_page.each do |ad|%>
-		<p><%= "#{ad[:title]} - #{ad[:content]} - #{ad[:updated_at]}" %>
-	  <%= link_to 'edit', edit_ad_path(ad) %>
-		<%= link_to 'delete', { controller: :ads, :action => :destroy, :id => ad.id }, method: :delete, confirm: 'Are u sure?'%></p>
-	<% end %>
-	
-	<% Ad.pgcount.times do |p|%>
-	  <%= link_to p+1, "/ads#{p+1}" %>
-	<% end %>
-
-</section>
+<% @check = true %>
+<%= render 'layouts/all_ads' %>

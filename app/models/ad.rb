@@ -5,6 +5,12 @@ class Ad < ActiveRecord::Base
 	
 	validates :category_id, presence: true
 	
+	validates :title, presence: true,
+										length: { maximum: 25 }
+										
+	validates :content, presence: true,
+											length: { maximum: 140 }
+	
 	PerPage = 3
   def self.page(pg)
     pg = pg.to_i

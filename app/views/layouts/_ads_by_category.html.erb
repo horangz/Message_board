@@ -1,0 +1,7 @@
+<section id = "cat">
+
+	<% @cats.each do |cat| %>
+		<p><%= link_to "#{cat.name}", "category#{cat.id}" %></p>
+	<% end %>
+
+</section>
