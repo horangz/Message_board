@@ -1,7 +1,9 @@
 class Ad < ActiveRecord::Base
 	belongs_to :categories
 	
-	attr_accessible :title, :content, :category_id
+	attr_accessible :title, :content, :category_id, :city, :address, :email
+	
+	email_regex = /^[-a-z0-9!#$&'*+=?^_`{|}~]+(\.[-a-z0-9!#$&'*+=?^_`{|}~]+)*@([a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/i
 	
 	validates :category_id, presence: true
 	
@@ -10,6 +12,15 @@ class Ad < ActiveRecord::Base
 										
 	validates :content, presence: true,
 											length: { maximum: 140 }
+											
+	validates :email, presence: true,
+										format: { with: email_regex }		
+
+	validates :city, presence: true,
+										length: { maximum: 25 }
+
+	validates :address, presence: true,
+										length: { maximum: 35 }									
 	
 	PerPage = 3
   def self.page(pg)

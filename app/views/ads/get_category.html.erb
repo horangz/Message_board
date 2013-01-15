@@ -1,10 +1,16 @@
-<%= render 'layouts/ads_by_category' %>
+<%= render 'layouts/get_categories' %>
 
 
 <section id = "con">
-
-	<h2><% @ads_by_cat.each do |ad|%>
-		<p><%=  "#{ad.title} - #{ad.content}" %></p>
-	<% end %></h2>
+	<h2><%= @cat.name %></h2>
+	<% @check = true %>
+	<% @ads_by_cat.each do |ad|%>
+		<p><%=  "#{ad.title} - #{ad.content}" %>
+		<% if @check == true %>
+			<%= link_to 'edit', edit_ad_path(ad) %>
+			<%= link_to 'delete', { controller: :ads, :action => :destroy, :id => ad.id }, method: :delete, confirm: 'Are u sure?'%></p>
+		<% end %>	
+		</p>
+	<% end %>
 
 </section>

@@ -12,7 +12,7 @@
 	<% end %>
 	
 	<% Ad.pgcount.times do |p|%>
-		<%= link_to p+1, "/ads#{p+1}" %>
+		<%= link_to p+1, "/#{pp_name(@check)}#{p+1}" %>
 	<% end %>
 
 </section>

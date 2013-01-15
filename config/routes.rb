@@ -4,6 +4,7 @@ MessageBoard::Application.routes.draw do
 	resources :sessions, olny: [:new, :create, :destroy]
 	resources :ads, :except => [:index, :show]
 
+	match "/admin:page", to: 'ads#admin'
 	match "/admin", to: 'ads#admin'
 	match "ads/:id", to: 'ads#destroy'
   match "/signup", to: 'users#new'	

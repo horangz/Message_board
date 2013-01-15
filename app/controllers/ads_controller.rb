@@ -3,12 +3,13 @@ class AdsController < ApplicationController
 	def new
 		@ad = Ad.new
 		@cats = Category.all
+		@title = 'New ad'
 	end
 	
 	def create
 		@ad = Ad.new(params[:ad])
 		if @ad.save
-			if root
+			if !admin?
 				redirect_to '/admin'
 			else	
 				redirect_to root_path
@@ -24,7 +25,7 @@ class AdsController < ApplicationController
 	
 	def destroy
 		Ad.find(params[:id]).destroy
-		if root
+		if !admin?
 			redirect_to '/admin'
 		else	
 			redirect_to root_path
@@ -32,28 +33,28 @@ class AdsController < ApplicationController
 	end
 	
 	def edit
-		@cats = Category.all
 		@ad = Ad.find(params[:id])
+		@cats = Category.all
 		@title = 'Edit ad'
 	end
 	
 	def update
 		@ad = Ad.find(params[:id])
 		if @ad.update_attributes(params[:ad])
-			if root
+			if !admin?
 				redirect_to '/admin'
 			else	
 				redirect_to root_path
 			end	
 		else
-			@title = 'Edit ad'
 			render 'edit'
 		end
 	end
 	
 	def admin
+		admin?
 		@ads_per_page = Ad.page(params[:page])
-		@cats = Category.all
+		@cats = get_categories
 	end
 	
 	def get_category
@@ -62,9 +63,4 @@ class AdsController < ApplicationController
 		@ads_by_cat = @cat.ads.all
 		@title = @cat.name
 	end
-	
-	def uploadFile
-    post = Ad.save(params[:upload])
-    render :text => "File has been uploaded successfully"
-  end
 end

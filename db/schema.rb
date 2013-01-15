@@ -16,6 +16,9 @@ ActiveRecord::Schema.define(:version => 20130112153714) do
   create_table "ads", :force => true do |t|
     t.string   "title"
     t.string   "content"
+    t.string   "email"
+    t.string   "city"
+    t.string   "address"
     t.integer  "category_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
