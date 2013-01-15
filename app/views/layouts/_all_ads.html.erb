@@ -3,10 +3,11 @@
 	<h2>Ads</h2>
 
 	<% @ads_per_page.each do |ad|%>
-		<p><%= "#{ad[:title]} - #{ad[:content]} - #{ad[:updated_at]}" %>
+		<p><%= "#{ad[:title]} - #{ad[:email]} - #{ad[:city]} - #{ad[:address]}" %></p>
+		<p><%= "#{ad[:content]}" %>
 		<% if @check == true %>
-			<%= link_to 'edit', edit_ad_path(ad) %>
-			<%= link_to 'delete', { controller: :ads, :action => :destroy, :id => ad.id }, method: :delete, confirm: 'Are u sure?'%></p>
+			<span id = "adm"><%= link_to 'edit', edit_ad_path(ad) %>
+			<%= link_to 'delete', { controller: :ads, :action => :destroy, :id => ad.id }, method: :delete, confirm: 'Are u sure?'%></span></p>
 		<% end %>	
 		</p>
 	<% end %>

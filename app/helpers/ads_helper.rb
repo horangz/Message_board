@@ -1,7 +1,7 @@
 module AdsHelper
 
 	def root
-		current_user.email == 'horangz@mail.ru'
+		current_user.admin == true
 	end
 	
 	def admin?
